@@ -4,31 +4,30 @@ from skimage.segmentation import mark_boundaries
 
 
 def explain_with_lime(model, img_rgb):
-    """
-    Takes the original RGB image (H,W,3) and returns a LIME visualization.
-    """
 
-    img_float = img_rgb.astype("float32") / 255.0
+    # Resize to smaller image only for LIME
+    img_small = cv2.resize(img_rgb, (128, 128))
 
+    img_float = img_small.astype("float32") / 255.0
     explainer = lime_image.LimeImageExplainer()
 
     def predict_fn(images):
         images = np.array(images)
-        return model.predict(images)
+        return model.predict(images, verbose=0)
 
     explanation = explainer.explain_instance(
         img_float,
         classifier_fn=predict_fn,
         top_labels=1,
         hide_color=0,
-        num_samples=200
+        num_samples=120,   # reduced from 1000 → Cloud-friendly
     )
 
     top_label = explanation.top_labels[0]
 
     temp, mask = explanation.get_image_and_mask(
         top_label,
-        positive_only=False,
+        positive_only=True,
         hide_rest=False,
         num_features=5,
         min_weight=0.0
@@ -38,3 +37,4 @@ def explain_with_lime(model, img_rgb):
     lime_image_rgb = (lime_image_rgb * 255).astype(np.uint8)
 
     return lime_image_rgb
+
