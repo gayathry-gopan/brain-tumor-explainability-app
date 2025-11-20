@@ -89,7 +89,7 @@ labels = ["glioma", "meningioma", "notumor", "pituitary"]
 # ----------------------------------------------------
 st.markdown("<div class='section-title'> Upload MRI Scan</div>", unsafe_allow_html=True)
 
-uploaded = st.file_uploader("", type=["jpg", "png", "jpeg"])
+uploaded = st.file_uploader("Upload MRI Image", type=["jpg", "png", "jpeg"], label_visibility="collapsed")
 
 if uploaded is not None:
 
