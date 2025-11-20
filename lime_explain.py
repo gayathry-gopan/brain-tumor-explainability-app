@@ -20,7 +20,7 @@ def explain_with_lime(model, img_rgb):
         classifier_fn=predict_fn,
         top_labels=1,
         hide_color=0,
-        num_samples=120,   # Reduced from 1000 → Cloud safe
+        num_samples=120,   # Reduced from 1000 ⭐
     )
 
     top_label = explanation.top_labels[0]
@@ -29,7 +29,7 @@ def explain_with_lime(model, img_rgb):
         top_label,
         positive_only=True,
         hide_rest=False,
-        num_features=5,  # Reduced from 10
+        num_features=5,  # Reduced from 10 ⭐
         min_weight=0.0
     )
 
