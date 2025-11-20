@@ -21,7 +21,7 @@ def explain_with_lime(model, img_rgb):
         classifier_fn=predict_fn,
         top_labels=1,
         hide_color=0,
-        num_samples=1000
+        num_samples=200
     )
 
     top_label = explanation.top_labels[0]
@@ -30,7 +30,7 @@ def explain_with_lime(model, img_rgb):
         top_label,
         positive_only=False,
         hide_rest=False,
-        num_features=10,
+        num_features=5,
         min_weight=0.0
     )
 
