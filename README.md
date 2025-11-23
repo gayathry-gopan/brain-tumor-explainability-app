@@ -26,9 +26,9 @@ Predicted class
 
 Confidence score
 
-### Explainability Tools
+## Explainability Tools
 
-# Built-in XAI methods:
+### Built-in XAI methods:
 
 * Grad-CAM
 
