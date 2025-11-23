@@ -8,15 +8,15 @@ Accepts .jpg, .jpeg, .png
 
 Automatically resizes and normalizes MRI scans
 
- ## Brain Tumor Classification (MobileNetV2)
+## Brain Tumor Classification (MobileNetV2)
 
 Predicts four classes:
 
-Glioma
+* Glioma
 
-Meningioma
+* Meningioma
 
-Pituitary
+* Pituitary
 
 No Tumor
 
@@ -30,14 +30,12 @@ Confidence score
 
 ### Built-in XAI methods:
 
-✔ Grad-CAM
+* Grad-CAM
 
 Highlights important regions influencing the prediction.
 
-✔ LIME
+* LIME
 
 Local Interpretable Model-Agnostic Explanations for pixel-level interpretability.
 
-## Streamlit Cloud Deployment
 
-Runs entirely in the browser — no installation needed.
