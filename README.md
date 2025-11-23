@@ -18,7 +18,7 @@ Predicts four classes:
 
 * Pituitary
 
-No Tumor
+* No Tumor
 
 ### Returns:
 
